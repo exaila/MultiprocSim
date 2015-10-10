@@ -38,51 +38,51 @@ RESOURCES += \
     images.qrc
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp \
-    Mainwindow.cpp \
-    cachemapper.cpp \
-    ram.cpp \
-    resetdialog.cpp \
-    instruction.cpp \
-    codelist.cpp \
-    instructionprogressdelegate.cpp \
-    ramdelegate.cpp \
-    parser.cpp \
-    cache.cpp \
-    concreteInstructions.cpp \
-    coreState.cpp \
-    helper.cpp \
-    instructionState.cpp \
-    simulatedSystem.cpp \
-    parsererror.cpp \
-    aboutdialog.cpp
+SOURCES += src/main.cpp \
+    src/Mainwindow.cpp \
+    src/cachemapper.cpp \
+    src/ram.cpp \
+    src/resetdialog.cpp \
+    src/instruction.cpp \
+    src/codelist.cpp \
+    src/instructionprogressdelegate.cpp \
+    src/ramdelegate.cpp \
+    src/parser.cpp \
+    src/cache.cpp \
+    src/concreteInstructions.cpp \
+    src/coreState.cpp \
+    src/helper.cpp \
+    src/instructionState.cpp \
+    src/simulatedSystem.cpp \
+    src/parsererror.cpp \
+    src/aboutdialog.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    Mainwindow.h \
-    cachemapper.h \
-    ram.h \
-    resetdialog.h \
-    instruction.h \
-    codelist.h \
-    instructionprogressdelegate.h \
-    ramdelegate.h \
-    parser.h \
-    cache.h \
-    concreteInstructions.h \
-    coreState.h \
-    enums.h \
-    helper.h \
-    instructionState.h \
-    simulatedSystem.h \
-    parsererror.h \
-    aboutdialog.h
+    src/Mainwindow.h \
+    src/cachemapper.h \
+    src/ram.h \
+    src/resetdialog.h \
+    src/instruction.h \
+    src/codelist.h \
+    src/instructionprogressdelegate.h \
+    src/ramdelegate.h \
+    src/parser.h \
+    src/cache.h \
+    src/concreteInstructions.h \
+    src/coreState.h \
+    src/enums.h \
+    src/helper.h \
+    src/instructionState.h \
+    src/simulatedSystem.h \
+    src/parsererror.h \
+    src/aboutdialog.h
 
 FORMS += \
-    Mainwindow.ui \
-    resetdialog.ui \
-    aboutdialog.ui
+    forms/Mainwindow.ui \
+    forms/resetdialog.ui \
+    forms/aboutdialog.ui
 
