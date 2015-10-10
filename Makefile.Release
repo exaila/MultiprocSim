@@ -43,24 +43,24 @@ OBJECTS_DIR   = release
 
 ####### Files
 
-SOURCES       = main.cpp \
-		Mainwindow.cpp \
-		cachemapper.cpp \
-		ram.cpp \
-		resetdialog.cpp \
-		instruction.cpp \
-		codelist.cpp \
-		instructionprogressdelegate.cpp \
-		ramdelegate.cpp \
-		parser.cpp \
-		cache.cpp \
-		concreteInstructions.cpp \
-		coreState.cpp \
-		helper.cpp \
-		instructionState.cpp \
-		simulatedSystem.cpp \
-		parsererror.cpp \
-		aboutdialog.cpp release\qrc_images.cpp \
+SOURCES       = src\main.cpp \
+		src\Mainwindow.cpp \
+		src\cachemapper.cpp \
+		src\ram.cpp \
+		src\resetdialog.cpp \
+		src\instruction.cpp \
+		src\codelist.cpp \
+		src\instructionprogressdelegate.cpp \
+		src\ramdelegate.cpp \
+		src\parser.cpp \
+		src\cache.cpp \
+		src\concreteInstructions.cpp \
+		src\coreState.cpp \
+		src\helper.cpp \
+		src\instructionState.cpp \
+		src\simulatedSystem.cpp \
+		src\parsererror.cpp \
+		src\aboutdialog.cpp release\qrc_images.cpp \
 		release\moc_Mainwindow.cpp \
 		release\moc_resetdialog.cpp \
 		release\moc_aboutdialog.cpp
@@ -87,41 +87,41 @@ OBJECTS       = release/main.o \
 		release/moc_resetdialog.o \
 		release/moc_aboutdialog.o
 
-DIST          =  Mainwindow.h \
-		cachemapper.h \
-		ram.h \
-		resetdialog.h \
-		instruction.h \
-		codelist.h \
-		instructionprogressdelegate.h \
-		ramdelegate.h \
-		parser.h \
-		cache.h \
-		concreteInstructions.h \
-		coreState.h \
-		enums.h \
-		helper.h \
-		instructionState.h \
-		simulatedSystem.h \
-		parsererror.h \
-		aboutdialog.h main.cpp \
-		Mainwindow.cpp \
-		cachemapper.cpp \
-		ram.cpp \
-		resetdialog.cpp \
-		instruction.cpp \
-		codelist.cpp \
-		instructionprogressdelegate.cpp \
-		ramdelegate.cpp \
-		parser.cpp \
-		cache.cpp \
-		concreteInstructions.cpp \
-		coreState.cpp \
-		helper.cpp \
-		instructionState.cpp \
-		simulatedSystem.cpp \
-		parsererror.cpp \
-		aboutdialog.cpp
+DIST          =  src\Mainwindow.h \
+		src\cachemapper.h \
+		src\ram.h \
+		src\resetdialog.h \
+		src\instruction.h \
+		src\codelist.h \
+		src\instructionprogressdelegate.h \
+		src\ramdelegate.h \
+		src\parser.h \
+		src\cache.h \
+		src\concreteInstructions.h \
+		src\coreState.h \
+		src\enums.h \
+		src\helper.h \
+		src\instructionState.h \
+		src\simulatedSystem.h \
+		src\parsererror.h \
+		src\aboutdialog.h src\main.cpp \
+		src\Mainwindow.cpp \
+		src\cachemapper.cpp \
+		src\ram.cpp \
+		src\resetdialog.cpp \
+		src\instruction.cpp \
+		src\codelist.cpp \
+		src\instructionprogressdelegate.cpp \
+		src\ramdelegate.cpp \
+		src\parser.cpp \
+		src\cache.cpp \
+		src\concreteInstructions.cpp \
+		src\coreState.cpp \
+		src\helper.cpp \
+		src\instructionState.cpp \
+		src\simulatedSystem.cpp \
+		src\parsererror.cpp \
+		src\aboutdialog.cpp
 QMAKE_TARGET  = MultiProcSim
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = MultiProcSim.exe
@@ -187,7 +187,7 @@ release/qrc_images.cpp: images.qrc \
 compiler_moc_header_make_all: release/moc_Mainwindow.cpp release/moc_resetdialog.cpp release/moc_aboutdialog.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_Mainwindow.cpp release\moc_resetdialog.cpp release\moc_aboutdialog.cpp
-release/moc_Mainwindow.cpp: simulatedSystem.h \
+release/moc_Mainwindow.cpp: src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qlist.h \
@@ -281,11 +281,11 @@ release/moc_Mainwindow.cpp: simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		Mainwindow.h
-	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/asfak/Documents/MultiProcSim -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore Mainwindow.h -o release\moc_Mainwindow.cpp
+		src/Mainwindow.h
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/asfak/Documents/MultiProcSim -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore src\Mainwindow.h -o release\moc_Mainwindow.cpp
 
-release/moc_resetdialog.cpp: Mainwindow.h \
-		simulatedSystem.h \
+release/moc_resetdialog.cpp: src/Mainwindow.h \
+		src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qlist.h \
@@ -379,11 +379,11 @@ release/moc_resetdialog.cpp: Mainwindow.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		resetdialog.h
-	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/asfak/Documents/MultiProcSim -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore resetdialog.h -o release\moc_resetdialog.cpp
+		src/resetdialog.h
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/asfak/Documents/MultiProcSim -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore src\resetdialog.h -o release\moc_resetdialog.cpp
 
-release/moc_aboutdialog.cpp: aboutdialog.h
-	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/asfak/Documents/MultiProcSim -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore aboutdialog.h -o release\moc_aboutdialog.cpp
+release/moc_aboutdialog.cpp: src/aboutdialog.h
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/asfak/Documents/MultiProcSim -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtCore src\aboutdialog.h -o release\moc_aboutdialog.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -399,8 +399,8 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean
 
 ####### Compile
 
-release/main.o: main.cpp Mainwindow.h \
-		simulatedSystem.h \
+release/main.o: src/main.cpp src/Mainwindow.h \
+		src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qlist.h \
@@ -494,12 +494,12 @@ release/main.o: main.cpp Mainwindow.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		helper.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o src\main.cpp
 
-release/Mainwindow.o: Mainwindow.cpp Mainwindow.h \
-		simulatedSystem.h \
+release/Mainwindow.o: src/Mainwindow.cpp src/Mainwindow.h \
+		src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qlist.h \
@@ -593,7 +593,7 @@ release/Mainwindow.o: Mainwindow.cpp Mainwindow.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		ui_Mainwindow.h \
+		src/ui_Mainwindow.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QAction \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/qaction.h \
@@ -674,28 +674,28 @@ release/Mainwindow.o: Mainwindow.cpp Mainwindow.h \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/qtablewidget.h \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QVBoxLayout \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
-		resetdialog.h \
-		cachemapper.h \
-		coreState.h \
-		enums.h \
+		src/resetdialog.h \
+		src/cachemapper.h \
+		src/coreState.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
-		codelist.h \
+		src/codelist.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVector \
-		instruction.h \
-		instructionprogressdelegate.h \
-		ramdelegate.h \
-		helper.h \
-		parser.h \
+		src/instruction.h \
+		src/instructionprogressdelegate.h \
+		src/ramdelegate.h \
+		src/helper.h \
+		src/parser.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QMap \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QFile \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QPair \
-		parsererror.h \
+		src/parsererror.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QObjectUserData \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QStringList \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QModelIndex
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Mainwindow.o Mainwindow.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Mainwindow.o src\Mainwindow.cpp
 
-release/cachemapper.o: cachemapper.cpp ../../../../Qt/5.5/mingw492_32/include/QtCore/QVariant \
+release/cachemapper.o: src/cachemapper.cpp ../../../../Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qvariant.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qatomic.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qglobal.h \
@@ -761,10 +761,10 @@ release/cachemapper.o: cachemapper.cpp ../../../../Qt/5.5/mingw492_32/include/Qt
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qpoint.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qset.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qcontiguouscache.h \
-		helper.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
-		cachemapper.h \
-		Cache.h \
+		src/cachemapper.h \
+		src/Cache.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
@@ -791,11 +791,11 @@ release/cachemapper.o: cachemapper.cpp ../../../../Qt/5.5/mingw492_32/include/Qt
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		ram.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\cachemapper.o cachemapper.cpp
+		src/ram.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\cachemapper.o src\cachemapper.cpp
 
-release/ram.o: ram.cpp ram.h \
-		helper.h \
+release/ram.o: src/ram.cpp src/ram.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -888,11 +888,11 @@ release/ram.o: ram.cpp ram.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ram.o ram.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ram.o src\ram.cpp
 
-release/resetdialog.o: resetdialog.cpp resetdialog.h \
-		Mainwindow.h \
-		simulatedSystem.h \
+release/resetdialog.o: src/resetdialog.cpp src/resetdialog.h \
+		src/Mainwindow.h \
+		src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qlist.h \
@@ -986,7 +986,7 @@ release/resetdialog.o: resetdialog.cpp resetdialog.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		ui_resetdialog.h \
+		src/ui_resetdialog.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QAction \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/qaction.h \
@@ -1050,12 +1050,12 @@ release/resetdialog.o: resetdialog.cpp resetdialog.h \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/qspinbox.h \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QVBoxLayout \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
-		Helper.h \
+		src/Helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\resetdialog.o resetdialog.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\resetdialog.o src\resetdialog.cpp
 
-release/instruction.o: instruction.cpp instruction.h \
-		enums.h \
+release/instruction.o: src/instruction.cpp src/instruction.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1092,10 +1092,10 @@ release/instruction.o: instruction.cpp instruction.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		instructionState.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\instruction.o instruction.cpp
+		src/instructionState.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\instruction.o src\instruction.cpp
 
-release/codelist.o: codelist.cpp codelist.h \
+release/codelist.o: src/codelist.cpp src/codelist.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVector \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qvector.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qalgorithms.h \
@@ -1141,11 +1141,11 @@ release/codelist.o: codelist.cpp codelist.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qregexp.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringmatcher.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qpoint.h \
-		instruction.h \
-		enums.h \
+		src/instruction.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
-		concreteInstructions.h \
-		helper.h \
+		src/concreteInstructions.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/QStandardItem \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
@@ -1193,11 +1193,11 @@ release/codelist.o: codelist.cpp codelist.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\codelist.o codelist.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\codelist.o src\codelist.cpp
 
-release/instructionprogressdelegate.o: instructionprogressdelegate.cpp instructionprogressdelegate.h \
-		instruction.h \
-		enums.h \
+release/instructionprogressdelegate.o: src/instructionprogressdelegate.cpp src/instructionprogressdelegate.h \
+		src/instruction.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1285,10 +1285,10 @@ release/instructionprogressdelegate.o: instructionprogressdelegate.cpp instructi
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfontinfo.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfontmetrics.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\instructionprogressdelegate.o instructionprogressdelegate.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\instructionprogressdelegate.o src\instructionprogressdelegate.cpp
 
-release/ramdelegate.o: ramdelegate.cpp ramdelegate.h \
-		helper.h \
+release/ramdelegate.o: src/ramdelegate.cpp src/ramdelegate.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1325,9 +1325,9 @@ release/ramdelegate.o: ramdelegate.cpp ramdelegate.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ramdelegate.o ramdelegate.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ramdelegate.o src\ramdelegate.cpp
 
-release/parser.o: parser.cpp parser.h \
+release/parser.o: src/parser.cpp src/parser.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QMap \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qmap.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qiterator.h \
@@ -1399,17 +1399,17 @@ release/parser.o: parser.cpp parser.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVector \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QPair \
-		enums.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
-		instruction.h \
-		concreteInstructions.h \
-		helper.h \
-		codelist.h \
-		parsererror.h \
+		src/instruction.h \
+		src/concreteInstructions.h \
+		src/helper.h \
+		src/codelist.h \
+		src/parsererror.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QStringList
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\parser.o parser.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\parser.o src\parser.cpp
 
-release/cache.o: cache.cpp cache.h \
+release/cache.o: src/cache.cpp src/cache.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
@@ -1501,11 +1501,11 @@ release/cache.o: cache.cpp cache.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		helper.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\cache.o cache.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\cache.o src\cache.cpp
 
-release/concreteInstructions.o: concreteInstructions.cpp concreteInstructions.h \
+release/concreteInstructions.o: src/concreteInstructions.cpp src/concreteInstructions.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1542,15 +1542,15 @@ release/concreteInstructions.o: concreteInstructions.cpp concreteInstructions.h 
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		instruction.h \
-		enums.h \
-		coreState.h \
-		instructionState.h \
-		cachemapper.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\concreteInstructions.o concreteInstructions.cpp
+		src/instruction.h \
+		src/enums.h \
+		src/coreState.h \
+		src/instructionState.h \
+		src/cachemapper.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\concreteInstructions.o src\concreteInstructions.cpp
 
-release/coreState.o: coreState.cpp coreState.h \
-		enums.h \
+release/coreState.o: src/coreState.cpp src/coreState.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1587,8 +1587,8 @@ release/coreState.o: coreState.cpp coreState.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		cachemapper.h \
-		codelist.h \
+		src/cachemapper.h \
+		src/codelist.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVector \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qvector.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qalgorithms.h \
@@ -1599,8 +1599,8 @@ release/coreState.o: coreState.cpp coreState.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qregexp.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringmatcher.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qpoint.h \
-		instruction.h \
-		cache.h \
+		src/instruction.h \
+		src/cache.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/QStandardItemModel \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qstandarditemmodel.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
@@ -1648,13 +1648,13 @@ release/coreState.o: coreState.cpp coreState.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		instructionState.h \
-		simulatedSystem.h \
+		src/instructionState.h \
+		src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\coreState.o coreState.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\coreState.o src\coreState.cpp
 
-release/helper.o: helper.cpp helper.h \
+release/helper.o: src/helper.cpp src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1747,10 +1747,10 @@ release/helper.o: helper.cpp helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\helper.o helper.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\helper.o src\helper.cpp
 
-release/instructionState.o: instructionState.cpp instructionState.h \
-		enums.h \
+release/instructionState.o: src/instructionState.cpp src/instructionState.h \
+		src/enums.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1787,9 +1787,9 @@ release/instructionState.o: instructionState.cpp instructionState.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\instructionState.o instructionState.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\instructionState.o src\instructionState.cpp
 
-release/simulatedSystem.o: simulatedSystem.cpp simulatedSystem.h \
+release/simulatedSystem.o: src/simulatedSystem.cpp src/simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QQueue \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qqueue.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qlist.h \
@@ -1883,16 +1883,16 @@ release/simulatedSystem.o: simulatedSystem.cpp simulatedSystem.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qfont.h \
 		../../../../Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		helper.h \
+		src/helper.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
-		cache.h \
-		ram.h \
-		cachemapper.h \
-		coreState.h \
-		enums.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\simulatedSystem.o simulatedSystem.cpp
+		src/cache.h \
+		src/ram.h \
+		src/cachemapper.h \
+		src/coreState.h \
+		src/enums.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\simulatedSystem.o src\simulatedSystem.cpp
 
-release/parsererror.o: parsererror.cpp parsererror.h \
+release/parsererror.o: src/parsererror.cpp src/parsererror.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QString \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstring.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qchar.h \
@@ -1929,11 +1929,11 @@ release/parsererror.o: parsererror.cpp parsererror.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		enums.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\parsererror.o parsererror.cpp
+		src/enums.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\parsererror.o src\parsererror.cpp
 
-release/aboutdialog.o: aboutdialog.cpp aboutdialog.h \
-		ui_aboutdialog.h \
+release/aboutdialog.o: src/aboutdialog.cpp src/aboutdialog.h \
+		src/ui_aboutdialog.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qvariant.h \
 		../../../../Qt/5.5/mingw492_32/include/QtCore/qatomic.h \
@@ -2071,7 +2071,7 @@ release/aboutdialog.o: aboutdialog.cpp aboutdialog.h \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/qrubberband.h \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/QLabel \
 		../../../../Qt/5.5/mingw492_32/include/QtWidgets/qlabel.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\aboutdialog.o aboutdialog.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\aboutdialog.o src\aboutdialog.cpp
 
 release/qrc_images.o: release/qrc_images.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_images.o release\qrc_images.cpp

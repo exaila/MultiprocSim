@@ -1,0 +1,8 @@
+li $t1,1 
+li $t2,2 
+li $t3,3 
+li $t4,4 
+
+add $s0,$t1,$t2
+add $s1,$t3,$t4
+add $s0,$s0,$s1

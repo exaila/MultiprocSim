@@ -1,0 +1,15 @@
+beq $s1,1, L1
+L1: li $S1,10 #test comment  
+li $T1,0
+Loop: beq $S1,$T0,EndLoop
+lb $T2,0($T1)
+add $S0,$S0,$T2
+add $T1,$T1,1
+add $T0,$T0,1
+j Loop
+EndLoop: li $T1,63
+sb $S0,0($T1)
+li $T1,62
+li $T0,1
+cache
+sb $T0,0($T1)
